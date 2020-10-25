@@ -11,17 +11,17 @@ const luana = {
   ativa: true,
 };
 
-// const mario = {
-//   cliente: 'Mario',
-//   idade: 31,
-//   compras: [
-//     { nome: 'Notebook', preco: 'R$ 2500' },
-//     { nome: 'Geladeira', preco: 'R$ 3000' },
-//     { nome: 'Smartphone', preco: 'R$ 1500' },
-//     { nome: 'Guitarra', preco: 'R$ 3500' },
-//   ],
-//   ativa: false,
-// };
+const mario = {
+  cliente: 'Mario',
+  idade: 31,
+  compras: [
+    { nome: 'Notebook', preco: 'R$ 2500' },
+    { nome: 'Geladeira', preco: 'R$ 3000' },
+    { nome: 'Smartphone', preco: 'R$ 1500' },
+    { nome: 'Guitarra', preco: 'R$ 3500' },
+  ],
+  ativa: false,
+};
 
 
 const App = () => {
@@ -36,7 +36,11 @@ const App = () => {
     <div>
       <p>Nome: {dados.cliente}</p>
       <p>Nome: {dados.idade}</p>
+
+       <p>Ativo: <span style={{color: dados.ativa ? 'green' : 'red'}}>{dados.ativa ? 'ativo' : 'inativo'}</span></p>
+
       <p>Total: {total}</p>
+      <p>{total > 1000 && 'Você está gastando muito!'}</p>
     </div>  
   );
 };
