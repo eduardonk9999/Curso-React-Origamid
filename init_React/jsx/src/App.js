@@ -27,18 +27,16 @@ const luana = {
 const App = () => {
   const dados = luana;
 
-  const estiloSpan = {
-    display: 'block',
-    marginTop: '5px'
-  }
+  const total = dados.compras
+    .map((item) => Number(item.preco.replace('R$ ', '').replace('R$ ', '')))
+    .reduce((a, b) => a + b);
+  console.log(total)
 
   return (
     <div>
-      <h2>Nome: {dados.cliente}</h2>
-      <span>Idade: {dados.idade}</span>
-      <span style={estiloSpan} className={dados.ativa ? 'ativo' : 'inativo'}>Situação:{dados.ativa} </span>
-
-      <span>Total gastos: R${dados.compras.filter((p) => p.preco.replace("R$", ''))} </span>
+      <p>Nome: {dados.cliente}</p>
+      <p>Nome: {dados.idade}</p>
+      <p>Total: {total}</p>
     </div>  
   );
 };
