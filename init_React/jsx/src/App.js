@@ -23,7 +23,6 @@ const mario = {
   ativa: false,
 };
 
-
 const App = () => {
   const dados = luana;
 
@@ -36,7 +35,7 @@ const App = () => {
     <div>
       <p>Nome: {dados.cliente}</p>
       <p>Nome: {dados.idade}</p>
-
+  
        <p>Ativo: <span style={{color: dados.ativa ? 'green' : 'red'}}>{dados.ativa ? 'ativo' : 'inativo'}</span></p>
 
       <p>Total: {total}</p>

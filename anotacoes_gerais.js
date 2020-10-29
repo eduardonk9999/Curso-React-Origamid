@@ -19,7 +19,7 @@ const App() => {
 
     return (
         <ul>
-            {filmes.map((filmes) => (
+            {filmes.map((filme) => (
                 <li key={filme}>{filme}</li>
             ))}
         </ul>    
