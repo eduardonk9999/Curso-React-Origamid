@@ -215,3 +215,60 @@ const Contador = () => {
     </>
   );
 };
+
+
+/*
+- useEffect
+Todo componente possui um ciclo de vida. Os pprincipais momentos acontecem
+quando o componente é renderizado, atualizado ou destruído, Com o
+React.useEffect() podemos definir um callback que irá ser executado durante
+certos momentos do ciclo de vida do componente.
+
+*/
+
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log('Ocorre ao renderizar e ao atualizar');
+  }, []);
+
+  return <button onClick={() => setContar(contar + 1)}>{contar}</button>
+}
+
+//OBS
+/*
+Ele é executado apenas uma ves quando a [] é passada vazia no final da
+função use.Effect, se quisermos executar quando algum estado mudar,
+temoos que passar o estado dentro da []
+*/
+//EX:
+
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log('Ocorre ao renderizar e ao atualizar');
+  }, [contar]);
+
+  return <button onClick={() => setContar(contar + 1)}>{contar}</button>
+}
+
+
+//useRef
+/**
+ * Retorna um objet com a propriedade current. Esse objeti pode
+ * ser utilizado para guardarmos valores que irão persistir durante todo
+ * o cuclo de vida do elemento. Geralmente usamos o mesmo para nos refirirmos
+ * a um elemento do DOM, sem precisarms utilizar o querySlecot
+ * 
+ */
+const App = () => {
+  const video = React.useRef();
+
+  React.useEffect(() => {
+    console.log(video.current);
+  });
+
+  return <video ref={video} />
+}
