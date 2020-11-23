@@ -304,3 +304,11 @@ const App = () => {
 
   return <button onClick={() => setContar(contar + 1)}>{valor}</button>;
 };
+
+//CreateContext
+/**
+ * O contexto ira permitir passarmos dados/estado a todos os componentes,
+ * sem a necessidade de utilizar propriedades. Serve principalmente para
+ * dados/estado globais como exemplo dados de usuário logado.
+*/
+// EX:
